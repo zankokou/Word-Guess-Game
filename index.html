@@ -8,63 +8,71 @@
         <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
-        <script rel="script" type-"text/javascript" src="assets/javascript/game.js"></script>
+
     </head>
     <body>
-        <div class = "container-fluid top-wrapper">
+        <div class = "container-fluid top-wrapper"></div>
             <div class = "jumbotron title">
-                <h1>Welcome to Hang Man!!!</h1>
-                <h2>Start Typing to Play!</h2>
-        
+                <h1>Welcome to Pokemon Word Guess!</h1>
+                <button onclick="gameStart()" class="btn btn-danger" >Click Here to Start Playing!</button>
+                <h3>Use your keyboard to guess the pokemon!</h3>
             </div> 
 
         </div>
 
 
-        <div class = "container mid-wrapper">
-           <div class = "jumbotron play-area border">
-                <div class = "col-sm-5 box-left box-images border">
-                    <p>Picture goes here</p>
-                </div>
-
-                <div class = "col-sm-5 box-right box-words border">
-                    <p>Underscore goes here</p>
-                    <p>_ _ _ _ _</p>
-                    <p>Number of Guesses Remaining: </p>
-                    <p></p>
-                </div>
-
+        <div class = "jumbotron main">
+            <div class= "col-sm-4">
+                <img src="assets/images/surf2.png" alt="surfing2">
+                <img src="assets/images/surf2.png" alt="surfing2">
+                <img src="assets/images/surf2.png" alt="surfing2">
+       
 
 
             </div>
+            <div class= "col-sm-4 ">
+                    <div id="underscores">_ _ _ _</div>
+               </div>
+               <div class= "col-sm-4">
+                    <img class ="image-right" src="assets/images/surf2.png" alt="surfing2">
+                    <img class ="image-right" src="assets/images/surf2.png" alt="surfing2">
+                    <img class ="image-right" src="assets/images/surf2.png" alt="surfing2">
+               </div>
+
         </div>
-            <br><br>
 
-            
-        <div class = "container bot-wrapper ">
-            <div class = "jumbotron bottom-area border">
-                <div class = "col-sm-5 box-left box-correct border">
-                    <p>Correct Guesses: </p>
+        <div class = "jumbotron guesses counter">
+            <div class= "col-sm-4" id="correctGuesses">
+                Correct Guesses:
+            </div>
 
-
+            <div class= "col-sm-4" id="wrongGuesses">
+                    Wrong Guesses:
                 </div>
 
-                <div class = "col-sm-5 box-right -box-wrong border">
-                    <p>Wrong Guesses: </p>
+            <div class= "col-sm-4" id="lives">
+                    Lives Left: 10
                 </div>
-            </div>        
-        </div>
-     
     
+        </div>
 
 
+        <div class = "jumbotron guesses bottom">
+                <div class= "col-sm-4" id="wins">
+                    Wins: 0
+                </div>
+    
+                <div class= "col-sm-4" id="losses">
+                        Losses: 0
+                </div>
 
-
-
-
-
+    
+        </div>  
+        
         
 
     
     </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script rel="script" type-"text/javascript" src="assets/javascript/game.js"></script>
 </html>
