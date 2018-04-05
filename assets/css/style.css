@@ -39,7 +39,7 @@ text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
     font-size: 18px;
     color: white;
     text-shadow: 0 0 5px #FF0000, 0 0 5px #0000FF;
-    background-image: url(../images/dacrew.jpg);
+    background-image: url(../images/woo.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -49,7 +49,7 @@ text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
     font-size: 18px;
     color: white;
     text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
-    background-image: url(../images/woo.jpg);
+    background-image: url(../images/dacrew.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -74,8 +74,17 @@ img{
 .image-right {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
+    float: right;
 }
 .gif{
     width: auto;
     height: 106px;
+}
+
+#pokeball{
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    display: inline;
+    float: right;
+
 }

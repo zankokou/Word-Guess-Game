@@ -19,6 +19,9 @@ var guesses = 10;
 //Create State Of Game
 var gameState = false;
 
+
+
+
 //functions
 function check(){
     // console.log("Game Started");
@@ -53,7 +56,7 @@ function gameStart(){
     document.getElementById("underscores").textContent= [underScoreArr.join(" ")];
     document.getElementById("correctGuesses").textContent= "Correct Guesses: ";
     document.getElementById("wrongGuesses").textContent= "Wrong Guesses: ";
-    document.getElementById("lives").textContent= ["Lives Left: "+ guesses];
+    document.getElementById("lives").textContent= ["Guesses Left: "+ guesses];
 
 
 
@@ -113,7 +116,7 @@ document.onkeypress = function (event) {
             wrongLettersArr.push(keyword);
             document.getElementById("wrongGuesses").textContent= ["Wrong Guesses: "+ wrongLettersArr];
             guesses--;
-            document.getElementById("lives").textContent= ["Lives Left: "+ guesses];
+            document.getElementById("lives").textContent= ["Guesses Left: "+ guesses];
         }
 
 
