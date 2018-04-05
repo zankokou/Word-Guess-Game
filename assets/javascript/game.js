@@ -63,9 +63,14 @@ document.onkeypress = function (event) {
     var keyword = String.fromCharCode(event.keyCode);
 
     if (chosenWord.indexOf(keyword) > -1){
-        rightLettersArr.push(keyword);
           underScoreArr[chosenWord.indexOf(keyword)] = keyword;
-            
+          
+          if (rightLettersArr.includes(keyword)){
+                // alert("You already guessed that letter!");
+            }
+          else{rightLettersArr.push(keyword);
+            }
+          
         //prints letter into underscores
         document.getElementById("underscores").textContent= [underScoreArr.join(" ")];
         document.getElementById("correctGuesses").textContent= ["Correct Guesses: " + rightLettersArr];
@@ -89,19 +94,29 @@ document.onkeypress = function (event) {
 
     }
 
+    
+
     else {
-        wrongLettersArr.push(keyword);
-        document.getElementById("wrongGuesses").textContent= ["Wrong Guesses: "+ wrongLettersArr];
-        guesses--;
-        document.getElementById("lives").textContent= ["Lives Left: "+ guesses];
+        if (wrongLettersArr.includes(keyword)){
+            // alert("You already guessed that letter!");
+        }
 
         //if game over alert!
-        if (guesses === 0){
+        else if (guesses === 0){
             alert("You are out of guesses! " + chosenWord + " got away!")
             losses++;
             document.getElementById("losses").textContent= ["Pokemon Lost: "+ losses];
             gameStart();
         }
+
+        else {
+            wrongLettersArr.push(keyword);
+            document.getElementById("wrongGuesses").textContent= ["Wrong Guesses: "+ wrongLettersArr];
+            guesses--;
+            document.getElementById("lives").textContent= ["Lives Left: "+ guesses];
+        }
+
+
 
 
 
