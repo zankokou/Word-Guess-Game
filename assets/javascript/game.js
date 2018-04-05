@@ -81,7 +81,7 @@ document.onkeypress = function (event) {
     
 
             if (underScoreArr.join("") == chosenWord){
-                alert("You Win!");
+                alert("Congratulations " + chosenWord + " was Caught!!!");
                 wins++;
                 document.getElementById("wins").textContent= ["Pokemon Caught: "+ wins];
                 gameStart();
@@ -97,7 +97,7 @@ document.onkeypress = function (event) {
 
         //if game over alert!
         if (guesses === 0){
-            alert("You are out of guesses! Game Over!")
+            alert("You are out of guesses! " + chosenWord + " got away!")
             losses++;
             document.getElementById("losses").textContent= ["Pokemon Lost: "+ losses];
             gameStart();
