@@ -1,7 +1,7 @@
 
 
 //Create WordBank Array
-var wordBankArr = ["mew","pikachu","squirtle", "dragonite", "flareon", "umbreon", "dugtrio","psyduck", "zapdos", "moltres", "meowth", "onyx", "rhydon", "pidgey", "spheal", "gastly"]
+var wordBankArr = ["mew","pikachu","squirtle", "dragonite", "arbok", "chansey", "flareon", "umbreon", "dugtrio","psyduck", "zapdos", "moltres", "meowth", "onyx", "rhydon", "pidgey", "spheal", "gastly"]
 //Generate Random Number based off length of box
 var rng = Math.floor(Math.random()* wordBankArr.length);
 var chosenWord = wordBankArr[rng];
@@ -83,7 +83,7 @@ document.onkeypress = function (event) {
             if (underScoreArr.join("") == chosenWord){
                 alert("You Win!");
                 wins++;
-                document.getElementById("wins").textContent= ["Wins: "+ wins];
+                document.getElementById("wins").textContent= ["Pokemon Caught: "+ wins];
                 gameStart();
             }
 
@@ -99,7 +99,7 @@ document.onkeypress = function (event) {
         if (guesses === 0){
             alert("You are out of guesses! Game Over!")
             losses++;
-            document.getElementById("losses").textContent= ["Losses: "+ losses];
+            document.getElementById("losses").textContent= ["Pokemon Lost: "+ losses];
             gameStart();
         }
 
