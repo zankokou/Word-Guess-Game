@@ -1,19 +1,23 @@
 
 
 //Create WordBank Array
-var wordBankArr = ["mew","pikachu", "blastoise", "charizard", "squirtle", "dragonite", "chansey", "flareon", "umbreon", "psyduck", "zapdos", "moltres", "meowth", "onyx", "rhydon", "pidgey", "spheal", "gastly"]
+var wordBankArr = ["mew","pikachu", "articuno", "mewtwo", "chimchar", "gardevoir", "blastoise", "charizard", "squirtle", "dragonite", "chansey", "flareon", "umbreon", "psyduck", "zapdos", "moltres", "meowth", "onyx", "rhydon", "pidgey", "spheal", "gastly"]
 var ball = document.createElement("img");
 ball.setAttribute("src","assets/images/pokeball.png");
 ball.setAttribute("class", "pokeball");
+ball.style.width = "0%";
 
 function callImage(){
+    ball.style.width = "100px";
+    ball.style.height = "auto";
     document.body.appendChild(ball);
 
 }
 
-// function removeImage(){
-//         document.body.
-//     }
+// callImage();
+function removeImage(){
+        ball.style.width = "0%";
+    }
 
 
 
@@ -90,7 +94,7 @@ function gameStart(){
 document.onkeypress = function (event) {
     var keyword = String.fromCharCode(event.keyCode);
     pauseWin();
-    // removeImage();
+    removeImage();
     if (chosenWord.indexOf(keyword) > -1){
           underScoreArr[chosenWord.indexOf(keyword)] = keyword;
           
@@ -116,7 +120,7 @@ document.onkeypress = function (event) {
 
             if (underScoreArr.join("") == chosenWord){
                 playWin();
-                // callImage();
+                callImage();
                 wins++;
                 alert("Congratulations " + chosenWord + " was Caught!!!");
                 document.getElementById("wins").textContent= ["Pokemon Caught: "+ wins];
@@ -134,7 +138,7 @@ document.onkeypress = function (event) {
         }
 
         //if game over alert!
-        else if (guesses === 0){
+        else if (guesses === 1){
             alert("You are out of guesses! " + chosenWord + " got away!")
             losses++;
             document.getElementById("losses").textContent= ["Pokemon Lost: "+ losses];

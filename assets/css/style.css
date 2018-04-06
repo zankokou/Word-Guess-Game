@@ -83,9 +83,10 @@ img{
 }
 
 .pokeball{
-    display: inline-block;
-    position: absolute;
-    left: 45.5%;
-    top: 364px;
+    position: relative;
+    float: left;
+    left: 47%;
+    bottom: 440px;
 }
+
 
