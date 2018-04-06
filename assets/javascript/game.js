@@ -1,7 +1,32 @@
 
 
 //Create WordBank Array
-var wordBankArr = ["mew","pikachu", "blastoise", "charizard", "squirtle", "dragonite", "chansey", "flareon", "umbreon", "dugtrio","psyduck", "zapdos", "moltres", "meowth", "onyx", "rhydon", "pidgey", "spheal", "gastly"]
+var wordBankArr = ["mew","pikachu", "blastoise", "charizard", "squirtle", "dragonite", "chansey", "flareon", "umbreon", "psyduck", "zapdos", "moltres", "meowth", "onyx", "rhydon", "pidgey", "spheal", "gastly"]
+var ball = document.createElement("img");
+ball.setAttribute("src","assets/images/pokeball.png");
+ball.setAttribute("class", "pokeball");
+
+function callImage(){
+    document.body.appendChild(ball);
+
+}
+
+// function removeImage(){
+//         document.body.
+//     }
+
+
+
+var aud = document.getElementById("winAudio");
+function playWin(){
+    aud.play();
+}
+
+function pauseWin(){
+    aud.pause();
+    aud.load();
+}
+
 
 //Generate Random Number based off length of box
 var rng = Math.floor(Math.random()* wordBankArr.length);
@@ -52,18 +77,20 @@ function gameStart(){
     rng = Math.floor(Math.random()* wordBankArr.length);
     chosenWord = wordBankArr[rng];
     generateUnderscores();
+    
     document.getElementById("underscores").textContent= [underScoreArr.join(" ")];
     document.getElementById("correctGuesses").textContent= "Correct Guesses: ";
     document.getElementById("wrongGuesses").textContent= "Wrong Guesses: ";
     document.getElementById("lives").textContent= ["Guesses Left: "+ guesses];
-
+    
 
 
 
 //user input function
 document.onkeypress = function (event) {
     var keyword = String.fromCharCode(event.keyCode);
-
+    pauseWin();
+    // removeImage();
     if (chosenWord.indexOf(keyword) > -1){
           underScoreArr[chosenWord.indexOf(keyword)] = keyword;
           
@@ -88,10 +115,13 @@ document.onkeypress = function (event) {
         document.getElementById("correctGuesses").textContent= ["Correct Guesses: " + rightLettersArr];
 
             if (underScoreArr.join("") == chosenWord){
-                alert("Congratulations " + chosenWord + " was Caught!!!");
+                playWin();
+                // callImage();
                 wins++;
+                alert("Congratulations " + chosenWord + " was Caught!!!");
                 document.getElementById("wins").textContent= ["Pokemon Caught: "+ wins];
                 gameStart();
+            
             }
 
     }
@@ -117,9 +147,6 @@ document.onkeypress = function (event) {
             guesses--;
             document.getElementById("lives").textContent= ["Guesses Left: "+ guesses];
         }
-
-
-
 
 
     }
