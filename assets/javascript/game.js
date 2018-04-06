@@ -1,7 +1,8 @@
 
 
 //Create WordBank Array
-var wordBankArr = ["mew","pikachu","squirtle", "dragonite", "arbok", "chansey", "flareon", "umbreon", "dugtrio","psyduck", "zapdos", "moltres", "meowth", "onyx", "rhydon", "pidgey", "spheal", "gastly"]
+var wordBankArr = ["mew","pikachu", "blastoise", "charizard", "squirtle", "dragonite", "chansey", "flareon", "umbreon", "dugtrio","psyduck", "zapdos", "moltres", "meowth", "onyx", "rhydon", "pidgey", "spheal", "gastly"]
+
 //Generate Random Number based off length of box
 var rng = Math.floor(Math.random()* wordBankArr.length);
 var chosenWord = wordBankArr[rng];
@@ -18,8 +19,6 @@ var guesses = 10;
 
 //Create State Of Game
 var gameState = false;
-
-
 
 
 //functions
@@ -69,24 +68,24 @@ document.onkeypress = function (event) {
           underScoreArr[chosenWord.indexOf(keyword)] = keyword;
           
           if (rightLettersArr.includes(keyword)){
-                // alert("You already guessed that letter!");
+                alert("You already guessed that letter!");
             }
           else{rightLettersArr.push(keyword);
             }
-          
-        //prints letter into underscores
-        document.getElementById("underscores").textContent= [underScoreArr.join(" ")];
-        document.getElementById("correctGuesses").textContent= ["Correct Guesses: " + rightLettersArr];
-
         //place letters in correct location of word
-        function correctGuess(event) {
+        function correctGuess() {
             for (var j = 0; j < chosenWord.length; j++) {
                 if (chosenWord[j] === keyword) {
                     underScoreArr[j] =  keyword;
                 }
             }            
+            return underScoreArr;
         }
-    
+        correctGuess();
+
+        //prints letter into underscores
+        document.getElementById("underscores").textContent= [underScoreArr.join(" ")];
+        document.getElementById("correctGuesses").textContent= ["Correct Guesses: " + rightLettersArr];
 
             if (underScoreArr.join("") == chosenWord){
                 alert("Congratulations " + chosenWord + " was Caught!!!");
@@ -101,7 +100,7 @@ document.onkeypress = function (event) {
 
     else {
         if (wrongLettersArr.includes(keyword)){
-            // alert("You already guessed that letter!");
+            alert("You already guessed that letter!");
         }
 
         //if game over alert!
