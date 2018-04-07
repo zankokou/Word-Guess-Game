@@ -36,7 +36,7 @@ text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
 
 .counter{
     font-weight: bolder;
-    font-size: 18px;
+    font-size: 25px;
     color: white;
     text-shadow: 0 0 5px #FF0000, 0 0 5px #0000FF;
     background-image: url(../images/woo.jpg);
@@ -46,7 +46,7 @@ text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
 
 .bottom{
     font-weight: bolder;
-    font-size: 18px;
+    font-size: 25px;
     color: white;
     text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
     background-image: url(../images/dacrew.jpg);
